@@ -1,0 +1,89 @@
+# CV Builder — Requirements
+
+## System Requirements
+
+- Node.js          >= 18.0.0  (recommended 20+)
+- npm              >= 9.0.0
+- Git              >= 2.0
+- OS               Windows 10+, macOS 12+, or Linux (Ubuntu 20.04+)
+- Disk Space       ~500 MB (includes Puppeteer/Chromium)
+- RAM              >= 4 GB (Puppeteer needs ~512 MB per PDF generation)
+
+## Server Dependencies (server/package.json)
+
+# Core
+express             ^4.18.4      # Web framework
+dotenv              ^16.3.1      # Environment variable loader
+
+# Database
+sqlite3             ^5.1.7       # SQLite driver
+
+# Authentication & Security
+bcryptjs            ^2.4.3       # Password hashing (12 salt rounds)
+jsonwebtoken        ^9.0.3       # JWT token generation/verification
+cookie-parser       ^1.4.6       # Parse cookies from requests
+helmet              ^7.0.0       # Security headers (CSP, HSTS, etc.)
+cors                ^2.8.5       # Cross-origin resource sharing
+express-rate-limit  ^7.0.0       # Rate limiting middleware
+express-validator   ^7.0.1       # Input validation & sanitization
+sanitize-html       ^2.12.0      # XSS protection on user content
+
+# PDF & Templating
+puppeteer           ^23.0.0      # Headless Chromium for PDF rendering
+mustache            ^4.2.0       # Template engine for CV HTML
+
+# File Handling
+multer              ^1.4.5-lts.1 # File upload middleware (avatar photos)
+uuid                ^9.0.0       # Unique filename generation
+
+# Email
+nodemailer          ^6.9.8       # SMTP email sending
+
+# Dev Dependencies
+nodemon             ^3.0.1       # Auto-restart server on file changes
+
+## Client Dependencies (client/package.json)
+
+# Core
+react               ^18.3.1      # UI library
+react-dom           ^18.3.1      # React DOM renderer
+react-router-dom    ^6.14.2      # Client-side routing
+
+# UI Framework
+@mui/material       ^5.14.0      # Material UI components
+@mui/icons-material ^5.14.0      # Material UI icons
+@emotion/react      ^11.11.1     # CSS-in-JS (MUI dependency)
+@emotion/styled     ^11.11.0     # Styled components (MUI dependency)
+
+# HTTP & Templating
+axios               ^1.5.1       # HTTP client for API calls
+mustache            ^4.2.0       # Client-side template preview rendering
+
+# Dev Dependencies
+vite                ^5.4.1       # Build tool & dev server
+@vitejs/plugin-react ^4.3.1      # React support for Vite
+
+## Environment Variables Required (server/.env)
+
+NODE_ENV              # "development" or "production"
+JWT_SECRET            # Secret key for signing access tokens
+REFRESH_TOKEN_SECRET  # Secret key for signing refresh tokens
+JWT_EXPIRES_IN        # Access token lifetime (e.g. "15m")
+REFRESH_EXPIRES_IN    # Refresh token lifetime (e.g. "7d")
+SMTP_HOST             # SMTP server hostname (e.g. smtp.gmail.com)
+SMTP_PORT             # SMTP port (typically 587)
+SMTP_USER             # SMTP username/email
+SMTP_PASS             # SMTP password or app password
+BASE_URL              # Backend URL (e.g. http://localhost:5000)
+FRONTEND_ORIGIN       # Frontend URL (e.g. http://localhost:3000)
+
+## Ports Used
+
+5000                  # Backend API server
+3000                  # Frontend dev server (Vite)
+
+## Browser Support
+
+Chrome/Edge           >= 90
+Firefox               >= 90
+Safari                >= 15

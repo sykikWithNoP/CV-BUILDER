@@ -1,0 +1,41 @@
+Prompt: Analyze the current CV Builder project and user conversation
+
+Context:
+- Workspace: c:\Users\ROG-STRIX\OneDrive\Documents\Cv\CV-BUILDER
+- Project: Full-stack CV Builder with React/Vite frontend and Express/SQLite backend.
+- User has been debugging and fixing the app during the chat.
+
+Conversation summary:
+1. The user asked to implement a full-stack CV Builder and get it running locally.
+2. The app initially used PostgreSQL and encountered runtime issues on Windows.
+3. The solution was converted to local SQLite and Node.js backend routes were updated.
+4. The user experienced PowerShell execution policy issues with npm.ps1, so npm.cmd was used.
+5. The backend was started successfully on port 5000 and the frontend on port 3000.
+6. The user later asked to solve bugs in `client/src/pages/Dashboard.jsx`.
+7. The dashboard file contained duplicate closing JSX and leftover code, which was removed.
+
+Current state:
+- Backend running on http://localhost:5000
+- Frontend running on http://localhost:3000
+- Dashboard page now compiles and the frontend build passes.
+- Auth context and API endpoints are in place.
+
+Business and security context:
+- User plans to sell this project to institutions and wants a product that cannot be easily replicated.
+- The project should support pre-designed CV web formats for organizations.
+- Security should be top-notch with strong patches and defenses as of May 1, 2026.
+- Possible integration goal: connect to a college backend (e.g. islingtoncollege.edu.np) to create a new site.
+- User is financially constrained and hopes this project can generate income.
+
+Task:
+Analyze this conversation and the current project state. Provide a structured response that covers:
+- What the user has asked for and why
+- What changes have already been made
+- What remaining issues or validation steps should be completed next
+- Any recommendations for stabilizing the app and verifying end-to-end login/CV save/download flow
+- Any security recommendations for hardening the app before selling
+
+Output format:
+- Use headings and bullet points.
+- Keep it concise but complete.
+- Focus on the current project status and next actions.

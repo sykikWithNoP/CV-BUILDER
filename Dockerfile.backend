@@ -1,0 +1,12 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY server/package*.json ./
+RUN npm ci
+COPY server/ .
+RUN npm prune --production
+
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=builder /app /app
+EXPOSE 5000
+CMD ["node", "server.js"]
